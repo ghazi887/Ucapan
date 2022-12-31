@@ -10,11 +10,11 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>> 2023</title>
 	<style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
 		* {
 			padding: 0;
 			margin: 0;
 			box-sizing: border-box;
-			font-family: arial;
 		}
 		.cover {
 			width: 100%;
@@ -82,9 +82,10 @@
 			top: 5%;
 			letter-spacing: 2px;
 			font-size: 1.5em;
+			font-family: 'Rubik Bubbles', cursive;
 		}
 
-		.fix {
+		.fix , .fix2{
 			position: fixed;
 			z-index: 4;
 			width: 100%;
@@ -96,6 +97,7 @@
 			align-items: center;
 			opacity: 0;
 			transition: .6s;
+			font-family: 'Rubik Bubbles', cursive;
 		}
 		.fix img.pentoy {
 			width: 130px;
@@ -124,13 +126,15 @@
 			background-color: transparent ;
 		}
 		.fix p {
-			width: 300px;
+			width: 350px;
 			text-align: justify;
 			color: white;
 			position: absolute;
 			top: 30%;
 			display: flex;
 			flex-wrap: wrap;
+			line-height: 40px;
+			font-size: 1.6em;
 		}
 		
 
@@ -150,11 +154,17 @@
 			}
 			.cover .fix img.pentoy {
 				right: 10%;
-				top: 10%;
+				top: 5%;
+				width: 200px;
 			}
 			.cover .fix p {
 				left: 10%;
+				top: 7%;
 				letter-spacing: 2px;
+				line-height: 30px;
+			}
+			.cover .fix h3{
+				right: 10%;
 			}
 
 		}
@@ -185,18 +195,36 @@
 			color: white;
 			letter-spacing: 3px;
 		}
+  .cover	.fix2{
+  	z-index: 99999;
+  	width: 100%;
+  	height: 100vh;
+  	margin: 0;
+  	padding: 0;
+  }
+  .fix2 img{
+  	width: 80px;
+  	height: 80px ;
+  }
+  .fix2 span {
+  	position: absolute;
+  	bottom: 20%;
+  	letter-spacing: 2px;
+  	color: white;
+  }
 	</style>
 </head>
 <body>
 	<div class="cover">
+		<div class="fix2">
+			<button onclick="pesan(this)">
+			<img src="tiktok_mail.png" alt="">
+			</button>
+			<span>Klik </span>
+		</div>
 			<marquee>Disarankan membuka dengan browser edge atau bawaan hp supaya audionya auto play pas waktu nya habis</marquee>
 		<div class="fix">
 			
-		<!--	<img src="tiktok_tahunBaru2023.png" alt="" class="mail">
-			<div class="pesan">
-				Jika audio tidak bersuara disarankan membukanya di browser edge atau yang lainnya karena auto play di beberaoa browser di block, atau dengan menekan icon music di bawah
-				<button onclick="nyalainMusik(ambilAudio)"><img src="tiktok_msc2023.png" alt=""></button>
-			</div>-->
 			<img class="pentoy" src="tiktok_tahunBaru2023.gif" alt="">
 			<p>
 				terima kasih sudah selalu berbuat baik, semoga semua keinginan segera terwujud dan jangan lupa untuk selalu tersenyum 😊
@@ -244,15 +272,13 @@
 			batang[2].style.height = "calc("+ menit_a * 166.6 / 100+"%)"
 			batang[3].style.height = "calc("+ detik_a *166.6 / 100+"%)"
 			if (hari_a < 1 && jam_a < 1 && menit_a < 1 && detik_a < 1) {
-				hari.innerText = 0
+			hari.innerText = 0
 			jam.innerText = 0
 			menit.innerText = 0
 			detik.innerText = 0
-				const content = document.querySelector(".content")
-				content.style.opacity = ".3"
-				clearInterval(interVL)
-				nyalainMusik(ambilAudio)
-				
+			clearInterval(interVL)
+			const pesan = document.querySelector(".fix2")
+			pesan.style.opacity = "1"
 			}
 			//	alert(hari)
 		}
@@ -265,6 +291,16 @@
 					if (p.getAttribute("data-p") == 'a') {
 						p.play()
 					}
+				}
+				
+				
+				function pesan(p){
+				const content = document.querySelector(".content")
+				const pesan = document.querySelector(".fix2")
+				pesan.style.opacity = "0"
+				content.style.opacity = ".3"
+				nyalainMusik(ambilAudio)
+				
 				}
 		//alert(7/100)
 		//nyalainMusik(ambilAudio )
