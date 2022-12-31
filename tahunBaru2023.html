@@ -220,10 +220,34 @@ video{
   	z-index: -4;
   	opacity: .2;
   }
+
+.cek{
+			position: absolute;
+			left: 5px;
+			top: 5px;
+			z-index: 99999999;
+			background-color: transparent;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			color: white;
+			opacity: .5;
+			font-size: 10px;
+font-family: 'Bebas Neue', cursive;
+		}
+		.cek input {
+			accent-color: #579BB1;
+			margin-right: 5px;
+			width: 10px;
+		}
 	</style>
 </head>
 <body>
 	<div class="cover">
+<div class="cek">		
+  <input type="checkbox" name="" id="cek" onchange="cekRequest(this)">
+  <label for="cek">Full screen</label>
+   </div>
 		<div class="fix2">
 			<button onclick="pesan(this)">
 			<img src="tiktok_mail.png" alt="">
@@ -326,8 +350,41 @@ pesan.style.opacity = "0"
 				nyalainMusik(ambilAudio)
 				
 				}
-		//alert(7/100)
-		//nyalainMusik(ambilAudio )
+		function cekRequest(i){
+			if( i.checked == true){
+				fullLayar()
+			}else{
+				exitFullLayar()
+			}
+		}
+		
+		function fullLayar() {
+			var elem = document.documentElement;
+
+			if (elem.requestFullscreen) {
+				elem.requestFullscreen();
+			} else if (elem.webkitRequestFullscreen) {
+				/* Safari */
+				elem.webkitRequestFullscreen();
+			} else if (elem.msRequestFullscreen) {
+				/* IE11 */
+				elem.msRequestFullscreen();
+			}
+
+		}
+
+		function exitFullLayar() {
+			if (document.exitFullscreen) {
+				document.exitFullscreen();
+			} else if (document.webkitExitFullscreen) {
+				/* Safari */
+				document.webkitExitFullscreen();
+			} else if (document.msExitFullscreen) {
+				/* IE11 */
+				document.msExitFullscreen();
+			}
+
+		}
 		let interVL = setInterval(perhitungan, 1000)
 	</script>
 </body>
