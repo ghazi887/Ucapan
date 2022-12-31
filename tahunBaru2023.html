@@ -216,6 +216,14 @@ font-family: 'Bebas Neue', cursive;
   	letter-spacing: 2px;
   	color: white;
   }
+video{
+  	width: 100%;
+  	height: 100%;
+  	transform: scale(1.5);
+  	position: absolute;
+  	z-index: -4;
+  	opacity: .2;
+  }
 	</style>
 </head>
 <body>
@@ -228,7 +236,7 @@ font-family: 'Bebas Neue', cursive;
 		</div>
 			<marquee>Disarankan membuka dengan browser edge atau bawaan hp supaya audionya auto play pas waktu nya habis</marquee>
 		<div class="fix">
-			
+			<video muted="" src="tiktok_thnBaru.mp4" > </video>
 			<img class="pentoy" src="tiktok_tahunBaru2023.gif" alt="">
 			<p>
 				terima kasih sudah selalu berbuat baik, semoga semua keinginan segera terwujud dan jangan lupa untuk selalu tersenyum 😊
@@ -254,7 +262,19 @@ font-family: 'Bebas Neue', cursive;
 		const detik = document.querySelector(".detik .k")
 		const batang = document.querySelectorAll(".batang .isi")
 		const ambilAudio = document.querySelector("audio")
-		// atur waktu
+		
+		!function cekLebarLayar(){
+		const vd = document.querySelector("video")
+			if(window.screen.width > 700){
+				vd.src = "tiktok_thnBaru2.mp4"
+			}else{
+				vd.src = "tiktok_thnBaru.mp4"
+			}
+		}()
+
+
+// atur waktu
+
 
 		const waktuTujuan = new Date("Jan 1, 2023 00:00:00").getTime()
 		//alert(waktuTujuan)
@@ -294,6 +314,7 @@ font-family: 'Bebas Neue', cursive;
 					
 					if (p.getAttribute("data-p") == 'a') {
 						p.play()
+ p.loop = true
 					}
 				}
 				
@@ -301,7 +322,10 @@ font-family: 'Bebas Neue', cursive;
 				function pesan(p){
 				const content = document.querySelector(".content")
 				const pesan = document.querySelector(".fix2")
-				pesan.style.opacity = "0"
+const video = document.querySelector("video")
+				video.play()
+				video.loop = true				
+pesan.style.opacity = "0"
 				content.style.opacity = ".3"
 				nyalainMusik(ambilAudio)
 				
