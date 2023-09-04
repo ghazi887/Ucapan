@@ -46,7 +46,7 @@ function gantiGambar(a) {
   btn.textContent = "next"
   ctn.style.backgroundColor = "rgba(255,255,255, .1"
   setTimeout(()=> {
-    img.src = "kue_2.png"
+    img.src = nama+"/kue_2.png"
   }, 100)
   ucapanCetak()
 }
