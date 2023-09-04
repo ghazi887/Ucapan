@@ -1,3 +1,9 @@
+if(window.offsetWidth > 800){
+  alert("harus di buka di tampilan HP")
+  window.innerHTML = "bukak di HP"
+}
+
+
 const img = document.getElementById("gambar")
 const atas = document.getElementById("atas")
 const bawah = document.getElementById("bawah")
