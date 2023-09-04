@@ -1,6 +1,6 @@
 if(window.screen.width > 500){
   alert("harus di buka di tampilan HP")
-  window.body.innerHTML = "bukak di HP"
+  document.querySelector("body").innerHTML = "bukak di HP"
 }
 
 
