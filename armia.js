@@ -1,4 +1,4 @@
-if(window.offsetWidth > 400){
+if(window.offsetWidth > 500){
   alert("harus di buka di tampilan HP")
   window.innerHTML = "bukak di HP"
 }
