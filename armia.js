@@ -46,7 +46,7 @@ function gantiGambar(a) {
   btn.textContent = "next"
   ctn.style.backgroundColor = "rgba(255,255,255, .1"
   setTimeout(()=> {
-    img.src = nama+"_kue_2.png"
+    img.src = `${nama}_kue_2.png`
   }, 100)
   ucapanCetak()
 }
@@ -97,7 +97,7 @@ function hapusKue(){
   btn_2.style.display = "block"
   btn_2.textContent = "Udah 😁"
   btn_3.style.display = "none"
-  img.src = nama+"_love.gif"
+  img.src = `${nama}_love.gif`
   img.style.width = "200px"
 }
 function fullLayar() {
